@@ -21,7 +21,7 @@ def direct_show():
 def get_connections():
     global veyon_connetions
     fixed_message = ''
-    for ip in veyon_connetions:
+    for ip in list(set(veyon_connetions)):
         try:
             ip = socket.gethostbyaddr(ip)[0]
         except:
